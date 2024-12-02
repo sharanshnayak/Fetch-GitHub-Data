@@ -1,0 +1,219 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --dk-violet: hsl(268, 75%, 9%);
+    --lt-violet: hsl(268, 47%, 21%);
+    --lt-violet2: hsl(281, 89%, 26%);
+    --vb-violet: hsl(285, 91%, 52%);
+    --vb-violet2: hsl(290, 70%, 36%);
+
+    --vb-yellow: hsl(52, 100%, 62%);
+
+
+    --pl-white: hsl(0, 0%, 100%);
+
+    --vb-cyan: hsl(176, 100%, 44%);
+    --vb-cyan2: hsl(177, 92%, 70%);
+
+    --dk-text: hsl(198, 20%, 13%);
+}
+
+body{
+    position: relative;
+    max-width: 100vw;
+    min-height: 100vh;
+    background: rgb(5,34,34);
+    background: -moz-linear-gradient(310deg, rgba(5,34,34,1) 0%, rgba(28,95,98,1) 85%, rgba(4,55,55,1) 100%);
+    background: -webkit-linear-gradient(310deg, rgba(5,34,34,1) 0%, rgba(28,95,98,1) 85%, rgba(4,55,55,1) 100%);
+    background: linear-gradient(310deg, rgba(5,34,34,1) 0%, rgba(28,95,98,1) 85%, rgba(4,55,55,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    margin: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    opacity: 0.30;
+    letter-spacing: 0.5px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field{
+    background-color: #1f6060;
+    border: 4px solid black;
+    padding: 2rem 1.8rem;
+    border-radius: 1.5rem;
+    max-width: 100%;
+}
+
+.userName{
+    appearance: none;
+    border: none;
+    outline: none;
+    margin-right: 1rem;
+    padding: 0.8rem 2rem;
+    text-align: center;
+    border-radius: 1.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.submit {
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    opacity: 0.90;
+    border: 3px solid var(--dk-text);
+    background-color: rgba(132, 240, 240, 0.689);
+    transition: all 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.submit:hover {
+    background: linear-gradient(231deg, rgb(35, 5, 49) 0%, rgb(44, 18, 74) 50%, rgba(22, 6, 40, 1) 100%);
+    color: var(--pl-white); /* Change text color */
+    transform: scale(1.1); /* Slightly increase button size */
+    border: 3px solid rgba(132, 240, 240, 0.689);
+    box-shadow: 0px 2px 10px rgb(5,34,34); /* Add shadow */
+}
+
+.card{
+    margin-top: 3rem;
+    background: linear-gradient(231deg, rgb(35, 5, 49) 0%, rgb(44, 18, 74) 50%, rgba(22, 6, 40, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1.3rem;
+    padding: 1rem 1rem;
+    max-width: 100%;
+    transform-origin: left;
+    transition: ease-in;
+    text-transform: uppercase;
+    flex-wrap:wrap;
+}
+
+.card {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+.card.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.spinner {
+    position: absolute;
+    top: 65%;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid var(--vb-violet);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.Image{
+    margin: 1rem;
+    border-radius: 50%;
+}
+.Image img{
+    max-width: 170px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(91, 151, 132);
+}
+
+.details{
+    font-size: 2vh;
+    opacity: 0.65;
+    color: var(--pl-white);
+    line-height: 20px;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-bottom: 2rem; */
+}
+.name{
+    margin: 1rem 0rem;
+}
+
+
+@media only screen and (max-width: 555px) {
+    .heading{
+        font-size: 2rem;
+        opacity: 0.65;
+    }
+    .input-field {
+        padding: 1rem;
+    }
+    .userName, .submit {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    .card {
+        display: block;
+    }
+
+    .Image{
+        margin-left: 1.8rem;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .heading{
+        font-size: 1.4rem;
+        opacity: 0.65;
+    }
+    .input-field{
+        padding:0.8rem;
+    }
+    .userName, .submit {
+        padding: 0.8rem;
+        font-size: 0.7rem;
+        margin:5px;
+    }
+    .card {
+        display: block;
+    }
+
+    .Image{
+        margin-left: 1.8rem;
+    }
+}

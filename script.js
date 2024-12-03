@@ -23,8 +23,7 @@ submitBtn.addEventListener('click', () =>{
     userName=(githubUserName.value);
 
     let githubUrl = "https://api.github.com/users/";
-    let proxy = "https://cors-anywhere.herokuapp.com/";
-    let url = proxy + githubUrl + userName;
+    let url = githubUrl + userName;
 
     fetchData(url);
 
